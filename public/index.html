@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Telehealth visit</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="page-client">
+  <main id="join" class="card">
+    <h1>Your telehealth visit</h1>
+    <p>Enter your name to let your provider know you have arrived. You will wait privately until they bring you in.</p>
+    <form id="joinForm">
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" maxlength="40" autocomplete="name" required autofocus>
+      <button type="submit" class="primary">Enter waiting room</button>
+    </form>
+    <p id="joinError" class="error" role="alert" hidden></p>
+    <p class="fine">Your browser will ask to use your camera and microphone. Video and sound travel encrypted, directly between you and your provider. Nothing is recorded.</p>
+  </main>
+
+  <main id="waiting" class="card" hidden>
+    <h1>You are in the waiting room</h1>
+    <p id="waitingText" aria-live="polite">Your provider has been told you are here and will bring you in shortly. Please keep this page open.</p>
+    <div class="preview">
+      <video id="preview" autoplay playsinline muted></video>
+      <p id="previewNote" class="fine"></p>
+    </div>
+    <button id="leaveWaiting" type="button">Leave</button>
+  </main>
+
+  <main id="call" class="call" hidden>
+    <div class="stage" data-stage hidden>
+      <video data-stage-video autoplay playsinline muted></video>
+      <p class="stage-label" data-stage-label></p>
+    </div>
+    <div class="tiles" data-tiles></div>
+    <div class="controls">
+      <button type="button" data-sound class="attention" hidden>Turn on sound</button>
+      <button type="button" data-mic>Mute</button>
+      <button type="button" data-camera>Stop camera</button>
+      <button type="button" data-share>Share screen</button>
+      <button type="button" id="leaveCall" class="danger">Leave</button>
+    </div>
+  </main>
+
+  <main id="done" class="card" hidden>
+    <h1 id="doneTitle">Your visit has ended</h1>
+    <p id="doneText">You can close this page.</p>
+    <button id="again" type="button">Return to the start</button>
+  </main>
+
+  <script src="/assets/call.js"></script>
+  <script src="/assets/client.js"></script>
+</body>
+</html>

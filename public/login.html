@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Provider sign-in</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="page-client">
+  <main class="card">
+    <h1>Provider sign-in</h1>
+    <form id="loginForm">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit" class="primary">Sign in</button>
+    </form>
+    <p id="loginError" class="error" role="alert" hidden></p>
+  </main>
+  <script src="/assets/login.js"></script>
+</body>
+</html>

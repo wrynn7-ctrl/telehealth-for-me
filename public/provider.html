@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Provider – Telehealth</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="page-provider in-call">
+  <aside class="side">
+    <section>
+      <h2>Waiting room <span id="waitingCount" class="count" hidden></span></h2>
+      <p id="waitingEmpty" class="fine">Nobody is waiting.</p>
+      <ul id="waitingList" class="people" aria-live="polite"></ul>
+    </section>
+
+    <section>
+      <h2>In session</h2>
+      <p id="membersEmpty" class="fine">Nobody has been admitted.</p>
+      <ul id="memberList" class="people"></ul>
+      <button id="endSession" type="button" class="danger" hidden>End session for everyone</button>
+    </section>
+
+    <section class="side-foot">
+      <h2>Client link</h2>
+      <p class="fine">Give this address to your clients.</p>
+      <div class="link-row">
+        <input id="clientLink" type="text" readonly aria-label="Client link">
+        <button id="copyLink" type="button">Copy</button>
+      </div>
+      <p id="notice" class="fine" role="status"></p>
+      <button id="signOut" type="button">Sign out</button>
+    </section>
+  </aside>
+
+  <main id="call" class="call">
+    <div class="stage" data-stage hidden>
+      <video data-stage-video autoplay playsinline muted></video>
+      <p class="stage-label" data-stage-label></p>
+    </div>
+    <div class="tiles" data-tiles></div>
+    <div class="controls">
+      <button type="button" data-sound class="attention" hidden>Turn on sound</button>
+      <button type="button" data-mic>Mute</button>
+      <button type="button" data-camera>Stop camera</button>
+      <button type="button" data-share>Share screen</button>
+    </div>
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="card">
+      <h1 id="overlayTitle"></h1>
+      <p id="overlayText"></p>
+      <button id="overlayButton" type="button" class="primary">Reload</button>
+    </div>
+  </div>
+
+  <script src="/assets/call.js"></script>
+  <script src="/assets/provider.js"></script>
+</body>
+</html>

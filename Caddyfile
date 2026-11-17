@@ -1,0 +1,5 @@
+# Replace visits.example.com with your own domain name.
+# Caddy obtains and renews the HTTPS certificate automatically.
+visits.example.com {
+	reverse_proxy 127.0.0.1:3000
+}

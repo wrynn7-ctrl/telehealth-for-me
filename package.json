@@ -1,0 +1,17 @@
+{
+  "name": "telehealth-for-me",
+  "version": "1.0.0",
+  "description": "Self-hosted browser telehealth: private waiting room, encrypted peer-to-peer video, screen sharing.",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "setup": "node server/setup.js",
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
